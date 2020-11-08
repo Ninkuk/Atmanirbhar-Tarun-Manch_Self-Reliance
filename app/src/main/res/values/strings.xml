@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Atmanirbhar Bharat - Tarun Manch</string>
+
+    <string name="call_to_action">Find a great service within minutes!</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">info</string>
+    <string name="categories">categories</string>
+    <string name="popular_categories">Popular Categories</string>
+    <string name="recently_added">Recently Added</string>
 </resources>
