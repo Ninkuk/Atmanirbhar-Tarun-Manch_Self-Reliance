@@ -11,4 +11,6 @@
     <string name="popular_categories">Popular Categories</string>
     <string name="recently_added">Recently Added</string>
     <string name="my_favorites">My Favorites</string>
+    <string name="auto">Auto Garage, Tours, and Travels</string>
+    <string name="see_all">See all</string>
 </resources>
