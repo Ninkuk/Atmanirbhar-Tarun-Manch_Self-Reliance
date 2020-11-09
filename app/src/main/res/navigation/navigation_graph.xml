@@ -13,6 +13,13 @@
         <action
             android:id="@+id/action_homeFragment_to_businessPageFragment"
             app:destination="@id/businessPageFragment" />
+        <action
+            android:id="@+id/home_to_categories"
+            app:destination="@id/categoriesFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_from_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_from_right" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
