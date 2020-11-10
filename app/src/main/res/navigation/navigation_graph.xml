@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.HomeFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_businessPageFragment"
+            android:id="@+id/home_to_business"
             app:destination="@id/businessPageFragment" />
         <action
             android:id="@+id/home_to_categories"
@@ -23,27 +23,27 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.SettingsFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/businessPageFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.BusinessPageFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.business.BusinessPageFragment"
         android:label="fragment_business_page"
         tools:layout="@layout/fragment_business_page" />
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.FavoriteFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.favorites.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.AboutFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.CategoriesFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" />
 </navigation>
