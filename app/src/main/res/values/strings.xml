@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">Atmanirbhar Bharat - Tarun Manch</string>
+    <string name="app_name">Atmanirbhar Bharat</string>
+    <string name="app_name_hindi">आत्मनिर्भर भारत</string>
 
-    <string name="call_to_action">Find a great service within minutes!</string>
+    <string name="call_to_action">From local to global,</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="info">Info</string>
     <string name="categories">Categories</string>
     <string name="popular_categories">Popular Categories</string>
@@ -13,4 +12,8 @@
     <string name="my_favorites">My Favorites</string>
     <string name="auto">Auto Garage, Tours, and Travels</string>
     <string name="see_all">See all</string>
+    <string name="back_button">back_button</string>
+    <string name="overview">Overview</string>
+    <string name="contact_options">Contact Options</string>
+    <string name="hindi_dummy">जिम्मे दिशामे रहारुप विशेष जाने करती पुर्व पासपाई वास्तव गटको संपादक पासपाई असक्षम नवंबर अथवा पहेला रहारुप विचारशिलता होसके जाएन तरहथा। पत्रिका सदस्य प्रमान व्यवहार कैसे बदले पहोच। लक्ष्य माध्यम स्थापित प्रति देते असरकारक उपयोगकर्ता विश्वव्यापि बनाकर तरहथा। प्रतिबध्दता कोहम रखति स्थिति वर्णित केन्द्रित हिंदी</string>
 </resources>
