@@ -2,7 +2,7 @@
     <string name="app_name">Atmanirbhar Bharat</string>
     <string name="app_name_hindi">आत्मनिर्भर भारत</string>
 
-    <string name="call_to_action">From local to global,</string>
+    <string name="call_to_action">लोकल से ग्लोबल की ओर,</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="info">Info</string>
@@ -16,4 +16,7 @@
     <string name="overview">Overview</string>
     <string name="contact_options">Contact Options</string>
     <string name="hindi_dummy">जिम्मे दिशामे रहारुप विशेष जाने करती पुर्व पासपाई वास्तव गटको संपादक पासपाई असक्षम नवंबर अथवा पहेला रहारुप विचारशिलता होसके जाएन तरहथा। पत्रिका सदस्य प्रमान व्यवहार कैसे बदले पहोच। लक्ष्य माध्यम स्थापित प्रति देते असरकारक उपयोगकर्ता विश्वव्यापि बनाकर तरहथा। प्रतिबध्दता कोहम रखति स्थिति वर्णित केन्द्रित हिंदी</string>
+    <string name="suggested">Suggested for you</string>
+    <string name="available_locations">Available locations</string>
+    <string name="indore">Indore</string>
 </resources>
