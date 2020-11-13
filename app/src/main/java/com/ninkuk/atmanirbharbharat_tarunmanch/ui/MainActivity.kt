@@ -1,6 +1,7 @@
 package com.ninkuk.atmanirbharbharat_tarunmanch.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -18,5 +19,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         bottom_nav_view.setupWithNavController(navController)
 
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.categoryListFragment -> bottom_nav_view.visibility = View.GONE
+                R.id.businessPageFragment -> bottom_nav_view.visibility = View.GONE
+                else -> bottom_nav_view.visibility = View.VISIBLE
+            }
+        }
     }
 }
