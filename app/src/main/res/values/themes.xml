@@ -31,6 +31,7 @@
         <item name="iconPadding">10dp</item>
         <item name="android:textColor">@color/kiranaColor</item>
         <item name="rippleColor">@color/kiranaColor</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="EmailButton" parent="Widget.MaterialComponents.Button.OutlinedButton">

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="30dp"
-    android:layout_marginTop="10dp"
     android:layout_marginEnd="30dp"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,18 +15,20 @@
         android:padding="20dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/categoryImageCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange_100"
             app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            tools:cardBackgroundColor="@color/autoColor">
 
             <ImageView
+                android:id="@+id/categoryImage"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 tools:src="@drawable/ic_car"
-                tools:tint="@color/white" />
+                app:tint="@color/white" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -37,7 +39,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/bruh"
+                android:id="@+id/cardTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -48,6 +50,7 @@
                 android:text="BizName" />
 
             <TextView
+                android:id="@+id/small_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"

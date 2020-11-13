@@ -15,7 +15,7 @@ class HomeViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            _suggestedBusinesses.value = FirebaseService.getRandomBusinessFromAllCategories()
+            _suggestedBusinesses.value = FirebaseService.getRandomBusinessFromAllCategories().shuffled()
         }
     }
 }

@@ -11,12 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ninkuk.atmanirbharbharat_tarunmanch.R
-import com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoriesFragmentDirections
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
-
-    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,20 +21,17 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        val homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
 
         val businessList = homeViewModel.suggestedBusiness
         businessList.observe(viewLifecycleOwner, Observer {
             homeRecyclerView.layoutManager = LinearLayoutManager(this.context)
             homeRecyclerView.adapter = HomeRecyclerViewAdapter(it)
-        })
 
-//        val businessViewModel = ViewModelProvider(this)[BusinessViewModel::class.java]
-//
-//        val x = businessViewModel.businessProfile
-//        x.observe(viewLifecycleOwner, Observer {
-//            testText.text = it[0].businessName
-//        })
+            if (it.isNotEmpty()) {
+                progressIndicator.visibility = View.GONE
+            }
+        })
 
         return inflater.inflate(R.layout.fragment_home, container, false)
     }

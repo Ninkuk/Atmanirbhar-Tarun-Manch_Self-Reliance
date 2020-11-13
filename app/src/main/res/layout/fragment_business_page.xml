@@ -9,6 +9,7 @@
     tools:context=".ui.business.BusinessPageFragment">
 
     <LinearLayout
+        android:id="@+id/titleContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="3dp"
@@ -25,12 +26,14 @@
             android:theme="@style/Widget.AppCompat.Light.ActionButton" />
 
         <ImageView
+            android:id="@+id/categoryImage"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             app:tint="@color/white"
             tools:src="@drawable/ic_shop" />
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -44,6 +47,7 @@
             tools:text="Catering and Foods" />
 
         <TextView
+            android:id="@+id/ownersText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -85,6 +89,7 @@
             android:textSize="17sp" />
 
         <TextView
+            android:id="@+id/descriptionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
@@ -93,6 +98,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/contactContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"

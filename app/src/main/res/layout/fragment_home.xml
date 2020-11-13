@@ -40,7 +40,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -270,11 +271,20 @@
                     android:id="@+id/homeRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:orientation="horizontal"
+                    android:overScrollMode="never"
                     android:paddingBottom="20dp"
                     android:scrollbars="none"
                     tools:itemCount="10"
                     tools:listitem="@layout/cell_business" />
+
+                <ProgressBar
+                    android:id="@+id/progressIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:progressTint="@color/orange_700" />
 
             </LinearLayout>
 
