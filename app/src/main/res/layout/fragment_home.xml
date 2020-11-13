@@ -160,11 +160,47 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
                             android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:elevation="3dp"
                             app:rippleColor="#FFCC80">
 
                             <ImageView
-                                android:id="@+id/testBus"
+                                android:id="@+id/kiranaCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_kirana_horizontal" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:elevation="3dp"
+                            app:rippleColor="#FFCC80">
+
+                            <ImageView
+                                android:id="@+id/healthCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/auto"
+                                android:src="@drawable/ic_health_horizontal" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:elevation="3dp"
+                            app:rippleColor="#FFCC80">
+
+                            <ImageView
+                                android:id="@+id/cateringCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:contentDescription="@string/auto"
@@ -174,10 +210,14 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
                             android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:elevation="3dp"
                             app:rippleColor="#FFCC80">
 
                             <ImageView
+                                android:id="@+id/coachingCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:contentDescription="@string/auto"
@@ -187,40 +227,18 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
                             android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:elevation="3dp"
                             app:rippleColor="#FFCC80">
 
                             <ImageView
+                                android:id="@+id/builderCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:contentDescription="@string/auto"
-                                android:src="@drawable/ic_computer_horizontal" />
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            app:rippleColor="#FFCC80">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/auto"
-                                android:src="@drawable/ic_kirana_horizontal" />
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            app:rippleColor="#FFCC80">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/auto"
-                                android:src="@drawable/ic_boutique_horizontal" />
+                                android:src="@drawable/ic_builder_horizontal" />
                         </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>
@@ -253,6 +271,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:paddingBottom="20dp"
                     android:scrollbars="none"
                     tools:itemCount="10"
                     tools:listitem="@layout/cell_business" />
