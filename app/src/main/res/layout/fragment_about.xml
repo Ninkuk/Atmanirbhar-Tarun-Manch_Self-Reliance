@@ -1,13 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.about.AboutFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/info" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_orange"
+            android:orientation="vertical">
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:src="@drawable/ic_heart" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/questionTitle"
+                android:text="@string/what_is_this_app" />
+
+            <TextView
+                style="@style/answerTitle"
+                android:text="@string/app_explanation" />
+
+            <TextView
+                style="@style/questionTitle"
+                android:layout_marginTop="30dp"
+                android:text="@string/submit_question" />
+
+            <TextView
+                style="@style/answerTitle"
+                android:text="@string/submit_answer" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#6734BA"
+                android:text="@string/request_form"
+                android:textSize="12sp"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_form_24" />
+
+            <TextView
+                style="@style/questionTitle"
+                android:layout_marginTop="30dp"
+                android:text="@string/contribute_project_question" />
+
+            <TextView
+                style="@style/answerTitle"
+                android:text="@string/contribute_project_answer" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Made with " />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_favorite_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text=" by Ninad Kulkarni" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

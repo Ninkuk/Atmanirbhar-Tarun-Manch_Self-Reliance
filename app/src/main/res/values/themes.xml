@@ -43,4 +43,18 @@
         <item name="textAllCaps">false</item>
         <item name="rippleColor">@color/healthColor</item>
     </style>
+
+    <style name="questionTitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="answerTitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/montserrat</item>
+    </style>
 </resources>
