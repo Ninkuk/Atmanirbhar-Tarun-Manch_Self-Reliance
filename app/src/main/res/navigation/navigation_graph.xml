@@ -12,7 +12,14 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/home_to_business"
-            app:destination="@id/businessPageFragment" />
+            app:destination="@id/businessPageFragment"
+            app:enterAnim="@anim/enter_sliding_up">
+
+            <argument
+                android:name="businessObject"
+                app:argType="com.ninkuk.atmanirbharbharat_tarunmanch.data.Business" />
+
+        </action>
         <action
             android:id="@+id/home_to_categories"
             app:destination="@id/categoriesFragment"
@@ -20,6 +27,15 @@
             app:exitAnim="@anim/exit_from_left"
             app:popEnterAnim="@anim/enter_from_left"
             app:popExitAnim="@anim/exit_from_right" />
+        <action
+            android:id="@+id/home_to_categoryList"
+            app:destination="@id/categoryListFragment">
+
+            <argument
+                android:name="category"
+                app:argType="string" />
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -30,12 +46,28 @@
         android:id="@+id/businessPageFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.business.BusinessPageFragment"
         android:label="fragment_business_page"
-        tools:layout="@layout/fragment_business_page" />
+        tools:layout="@layout/fragment_business_page">
+
+        <argument
+            android:name="businessObject"
+            app:argType="com.ninkuk.atmanirbharbharat_tarunmanch.data.Business" />
+
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.favorites.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/favorite_to_businessPage"
+            app:destination="@id/businessPageFragment">
+
+            <argument
+                android:name="businessObject"
+                app:argType="com.ninkuk.atmanirbharbharat_tarunmanch.data.Business" />
+
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.about.AboutFragment"
@@ -45,5 +77,36 @@
         android:id="@+id/categoriesFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/categories_to_categoryList"
+            app:destination="@id/categoryListFragment"
+            app:enterAnim="@anim/enter_sliding_up">
+
+            <argument
+                android:name="category"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoryListFragment"
+        android:label="fragment_category_list"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/categoryList_to_business"
+            app:destination="@id/businessPageFragment"
+            app:enterAnim="@anim/enter_sliding_up">
+
+            <argument
+                android:name="businessObject"
+                app:argType="com.ninkuk.atmanirbharbharat_tarunmanch.data.Business" />
+
+        </action>
+
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
 </navigation>
