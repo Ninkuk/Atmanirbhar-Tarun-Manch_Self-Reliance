@@ -1,18 +1,16 @@
 package com.ninkuk.atmanirbharbharat_tarunmanch.data
 
 import android.os.Parcelable
-import android.util.Log
-import androidx.annotation.Keep
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.ktx.getField
 import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
-import java.lang.Exception
-import kotlin.reflect.typeOf
 
-@Keep
+@Entity(tableName = "business_table")
 @Parcelize
 data class Business(
+    @PrimaryKey
     val id: String = "",
     val businessName: String = "",
     val description: String = "",
