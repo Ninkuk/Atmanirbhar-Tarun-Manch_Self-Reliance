@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.AtmanirbharBharatTarunManch" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/orange_500</item>
+        <item name="colorPrimary">@color/tarunManchRed</item>
         <item name="colorPrimaryVariant">@color/orange_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
