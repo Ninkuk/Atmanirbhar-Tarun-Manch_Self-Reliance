@@ -3,6 +3,7 @@ package com.ninkuk.atmanirbharbharat_tarunmanch.data
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.DocumentSnapshot
 import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
@@ -11,7 +12,7 @@ import java.io.Serializable
 @Parcelize
 data class Business(
     @PrimaryKey
-    val id: String = "",
+    var id: String = "",
     val businessName: String = "",
     val description: String = "",
     val locationAddress: String = "",
@@ -50,7 +51,16 @@ data class Business(
                     category!!
                 )
             } catch (e: Exception) {
-                return Business(businessName = ":(")
+                val crashlytics = FirebaseCrashlytics.getInstance()
+                crashlytics.log(
+                    "Error occurred in business id ${getString("id")} of category ${
+                        getString(
+                            "category"
+                        )
+                    }"
+                )
+                crashlytics.recordException(e)
+                return Business(businessName = "An error occurred")
             }
         }
     }
