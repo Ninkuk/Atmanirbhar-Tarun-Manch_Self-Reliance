@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     tools:context=".ui.about.AboutFragment">
 
     <LinearLayout
@@ -14,21 +15,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient_orange"
-            android:orientation="vertical">
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:src="@drawable/ic_heart" />-->
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Get to know us!"
+                android:textColor="@color/tarunManchRed"
+                android:textSize="30sp" />
 
             <TextView
                 style="@style/questionTitle"
@@ -40,7 +36,6 @@
 
             <TextView
                 style="@style/questionTitle"
-                android:layout_marginTop="30dp"
                 android:text="@string/submit_question" />
 
             <TextView
@@ -48,23 +43,162 @@
                 android:text="@string/submit_answer" />
 
             <Button
+                android:id="@+id/requestFormBtn"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#6734BA"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/request_form"
                 android:textSize="12sp"
                 app:drawableTint="@color/white"
                 app:icon="@drawable/ic_baseline_form_24" />
 
             <TextView
+                style="@style/answerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" (or contact any of the numbers below)" />
+
+            <TextView
                 style="@style/questionTitle"
-                android:layout_marginTop="30dp"
+                android:text="@string/report_question" />
+
+            <Button
+                android:id="@+id/bugReport"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_500"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/bug_report"
+                android:textSize="12sp"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_bug_report_24" />
+
+            <Button
+                android:id="@+id/prashantBadweContact"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/kiranaColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/prashant_badwe"
+                android:textAllCaps="false"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_call_24" />
+
+            <Button
+                android:id="@+id/sunilDharmadhikariContact"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/kiranaColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/sunil_dharmadhikari"
+                android:textAllCaps="false"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_call_24" />
+
+            <Button
+                android:id="@+id/sameerPanseContact"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/kiranaColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/sameer_panse"
+                android:textAllCaps="false"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_call_24" />
+
+            <Button
+                android:id="@+id/sunilDeshpandeContact"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/kiranaColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/sunil_deshpande"
+                android:textAllCaps="false"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_call_24" />
+
+            <TextView
+                style="@style/questionTitle"
+                android:text="@string/feature_question" />
+
+            <Button
+                android:id="@+id/ninadKulkarniEmail"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/healthColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/ninad_kulkarni"
+                android:textAllCaps="false"
+                app:drawableTint="@color/white"
+                app:icon="@drawable/ic_baseline_email_24" />
+
+            <TextView
+                style="@style/questionTitle"
                 android:text="@string/contribute_project_question" />
 
             <TextView
                 style="@style/answerTitle"
-                android:text="@string/contribute_project_answer" />
+                android:text="@string/contribute_volunteer_answer" />
+
+            <TextView
+                style="@style/answerTitle"
+                android:layout_marginTop="5dp"
+                android:text="@string/contribute_developer_answer" />
+
+            <Button
+                android:id="@+id/githubBtn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#24292E"
+                android:fontFamily="@font/montserrat"
+                android:text="Ninkuk"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_github" />
+
+            <TextView
+                style="@style/questionTitle"
+                android:text="Please share and rate our app on play store!" />
+
+            <Button
+                android:id="@+id/rateBtn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/orange_400"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/rate"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_baseline_star_24" />
+
+            <Button
+                android:id="@+id/shareBtn"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/coachingColor"
+                android:fontFamily="@font/montserrat"
+                android:letterSpacing="0"
+                android:text="@string/share"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_baseline_share_24" />
 
         </LinearLayout>
 
@@ -72,6 +206,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -93,7 +229,6 @@
                 android:text=" by Ninad Kulkarni" />
 
         </LinearLayout>
-
     </LinearLayout>
 
 </ScrollView>
