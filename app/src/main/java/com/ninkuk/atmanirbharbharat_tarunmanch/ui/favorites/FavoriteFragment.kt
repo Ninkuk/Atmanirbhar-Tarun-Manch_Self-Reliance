@@ -1,16 +1,15 @@
 package com.ninkuk.atmanirbharbharat_tarunmanch.ui.favorites
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ninkuk.atmanirbharbharat_tarunmanch.R
 import kotlinx.android.synthetic.main.fragment_favorite.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class FavoriteFragment : Fragment() {
 
@@ -39,9 +38,5 @@ class FavoriteFragment : Fragment() {
         })
 
         return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
     }
 }
