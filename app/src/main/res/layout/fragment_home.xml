@@ -4,41 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     android:background="@color/off_white"
     android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
+        android:id="@+id/tarunManchLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="3dp"
-        android:orientation="vertical"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:paddingStart="30dp"
         android:paddingTop="30dp"
         android:paddingEnd="30dp"
         android:paddingBottom="30dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:includeFontPadding="false"
-            android:text="@string/call_to_action"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/tarunmanchlogo" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:includeFontPadding="false"
-            android:text="@string/app_name_hindi"
-            android:textColor="@color/orange_700"
-            android:textSize="40sp" />
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:includeFontPadding="false"
+                android:text="@string/call_to_action"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:includeFontPadding="false"
+                android:text="@string/app_name_hindi"
+                android:textColor="@color/tarunManchRed"
+                android:textSize="27sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never">
@@ -64,7 +82,7 @@
                     android:text="@string/available_locations"
                     android:textSize="15sp"
                     app:drawableStartCompat="@drawable/ic_baseline_location_24"
-                    app:drawableTint="@color/orange_500" />
+                    app:drawableTint="@color/tarunManchRed" />
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/locationChipGroup"
@@ -87,7 +105,7 @@
                         android:backgroundTint="@color/white"
                         android:elevation="3dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="Dewas"
+                        android:text="@string/dewas"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -97,7 +115,7 @@
                         android:backgroundTint="@color/white"
                         android:elevation="3dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="Ujjain"
+                        android:text="@string/ujjain"
                         android:textSize="12sp" />
 
                 </com.google.android.material.chip.ChipGroup>
@@ -126,7 +144,7 @@
                         android:text="@string/popular_categories"
                         android:textSize="15sp"
                         app:drawableStartCompat="@drawable/ic_baseline_star_24"
-                        app:drawableTint="@color/orange_500" />
+                        app:drawableTint="@color/tarunManchRed" />
 
                     <View
                         android:layout_width="0dp"
@@ -154,18 +172,16 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="30dp"
-                        android:paddingEnd="30dp">
+                        android:orientation="horizontal">
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:elevation="3dp"
-                            app:rippleColor="#FFCC80">
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp">
 
                             <ImageView
                                 android:id="@+id/kiranaCard"
@@ -177,11 +193,11 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:elevation="3dp"
-                            app:rippleColor="#FFCC80">
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp">
 
                             <ImageView
                                 android:id="@+id/healthCard"
@@ -194,11 +210,11 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:elevation="3dp"
-                            app:rippleColor="#FFCC80">
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp">
 
                             <ImageView
                                 android:id="@+id/cateringCard"
@@ -211,11 +227,11 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:elevation="3dp"
-                            app:rippleColor="#FFCC80">
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp">
 
                             <ImageView
                                 android:id="@+id/coachingCard"
@@ -228,11 +244,11 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:elevation="3dp"
-                            app:rippleColor="#FFCC80">
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp">
 
                             <ImageView
                                 android:id="@+id/builderCard"
@@ -251,7 +267,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -265,13 +281,13 @@
                     android:text="@string/suggested"
                     android:textSize="15sp"
                     app:drawableStartCompat="@drawable/ic_baseline_hot_24"
-                    app:drawableTint="@color/orange_500" />
+                    app:drawableTint="@color/tarunManchRed" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/homeRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     android:overScrollMode="never"
                     android:paddingBottom="20dp"

@@ -24,152 +24,84 @@ class HomeRecyclerViewAdapter(private val businessList: List<Business>) :
             setIcon(business)
         }
 
+        private fun setDarkTheme(color: Int, image: Int) {
+            itemView.categoryImageCard.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    color
+                )
+            )
+            itemView.categoryImage.setImageResource(image)
+            itemView.categoryImage.imageTintList =
+                ContextCompat.getColorStateList(itemView.context, R.color.black)
+        }
+
+        private fun setLightTheme(color: Int, image: Int) {
+            itemView.categoryImageCard.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    color
+                )
+            )
+            itemView.categoryImage.setImageResource(image)
+        }
+
         private fun setIcon(business: Business) {
             when (business.category) {
                 CategoryConstants.AUTO -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.autoColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_car)
-                    itemView.categoryImage.imageTintList =
-                        ContextCompat.getColorStateList(itemView.context, R.color.black)
+                    setLightTheme(R.color.autoColor, R.drawable.ic_car)
                 }
 
                 CategoryConstants.BEAUTY -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.beautyColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_cosmetic)
+                    setLightTheme(R.color.beautyColor, R.drawable.ic_cosmetic)
                 }
 
                 CategoryConstants.BOUTIQUE -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.boutiqueColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_shop)
+                    setLightTheme(R.color.boutiqueColor, R.drawable.ic_shop)
                 }
 
                 CategoryConstants.BUILDERS -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.builderColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_construction)
+                    setLightTheme(R.color.builderColor, R.drawable.ic_construction)
                 }
 
                 CategoryConstants.CATERING -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.cateringColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_food)
-                    itemView.categoryImage.imageTintList =
-                        ContextCompat.getColorStateList(itemView.context, R.color.black)
+                    setDarkTheme(R.color.cateringColor, R.drawable.ic_food)
                 }
 
                 CategoryConstants.COACHING -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.coachingColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_coaching)
+                    setLightTheme(R.color.coachingColor, R.drawable.ic_coaching)
                 }
 
                 CategoryConstants.COMPUTER -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.computerColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_electronics)
+                    setLightTheme(R.color.computerColor, R.drawable.ic_electronics)
                 }
 
                 CategoryConstants.GURUJI -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.gurujiColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_havan)
-                    itemView.categoryImage.imageTintList =
-                        ContextCompat.getColorStateList(itemView.context, R.color.black)
+                    setDarkTheme(R.color.gurujiColor, R.drawable.ic_havan)
                 }
 
                 CategoryConstants.HANDICRAFT -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.handicraftColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_fabric)
+                    setLightTheme(R.color.handicraftColor, R.drawable.ic_fabric)
                 }
 
                 CategoryConstants.HEALTH -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.healthColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_heart)
+                    setLightTheme(R.color.healthColor, R.drawable.ic_heart)
                 }
 
                 CategoryConstants.INVESTMENT -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.investmentColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_consultancy)
+                    setLightTheme(R.color.investmentColor, R.drawable.ic_consultancy)
                 }
 
                 CategoryConstants.KIRANA -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.kiranaColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_grocery)
+                    setLightTheme(R.color.kiranaColor, R.drawable.ic_grocery)
                 }
 
                 CategoryConstants.OTHER -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.otherColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_hand)
+                    setLightTheme(R.color.otherColor, R.drawable.ic_hand)
                 }
 
                 CategoryConstants.PRINTING -> {
-                    itemView.categoryImageCard.setBackgroundColor(
-                        ContextCompat.getColor(
-                            itemView.context,
-                            R.color.printingColor
-                        )
-                    )
-                    itemView.categoryImage.setImageResource(R.drawable.ic_stationary)
+                    setLightTheme(R.color.printingColor, R.drawable.ic_stationary)
                 }
             }
         }

@@ -1,7 +1,6 @@
 package com.ninkuk.atmanirbharbharat_tarunmanch.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ninkuk.atmanirbharbharat_tarunmanch.R
+import com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoryConstants
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -41,29 +41,35 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.home_to_categories)
         }
 
+        tarunManchLogo.setOnClickListener {
+            nestedScrollView.smoothScrollTo(0, 0)
+        }
+
+
+
         setUpCardListeners()
     }
 
     private fun setUpCardListeners() {
         kiranaCard.setOnClickListener {
-            navigateToList("kirana")
+            navigateToList(CategoryConstants.KIRANA, CategoryConstants.KIRANA_SHORT)
         }
         healthCard.setOnClickListener {
-            navigateToList("health")
+            navigateToList(CategoryConstants.HEALTH, CategoryConstants.HEALTH_SHORT)
         }
         cateringCard.setOnClickListener {
-            navigateToList("catering")
+            navigateToList(CategoryConstants.CATERING, CategoryConstants.CATERING_SHORT)
         }
         coachingCard.setOnClickListener {
-            navigateToList("coaching")
+            navigateToList(CategoryConstants.COACHING, CategoryConstants.COACHING_SHORT)
         }
         builderCard.setOnClickListener {
-            navigateToList("builder")
+            navigateToList(CategoryConstants.BUILDERS, CategoryConstants.BUILDERS_SHORT)
         }
     }
 
-    private fun navigateToList(category: String) {
-        val action = HomeFragmentDirections.homeToCategoryList(category)
+    private fun navigateToList(category: String, categoryShort: String) {
+        val action = HomeFragmentDirections.homeToCategoryList(category, categoryShort)
         findNavController().navigate(action)
     }
 }
