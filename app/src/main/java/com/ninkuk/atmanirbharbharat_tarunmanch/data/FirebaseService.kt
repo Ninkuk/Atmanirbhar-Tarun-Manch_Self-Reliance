@@ -2,10 +2,13 @@ package com.ninkuk.atmanirbharbharat_tarunmanch.data
 
 import android.annotation.SuppressLint
 import android.util.Log
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.util.Util.autoId
 import com.ninkuk.atmanirbharbharat_tarunmanch.data.Business.Companion.toBusiness
+import com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoryConstants
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 
@@ -18,20 +21,20 @@ object FirebaseService {
 
         val randBusinessList = arrayListOf<Business>()
 
-//        randBusinessList.add(getRandomBusinessFromCategory("auto"))
-//        randBusinessList.add(getRandomBusinessFromCategory("beauty"))
-//        randBusinessList.add(getRandomBusinessFromCategory("boutique"))
-//        randBusinessList.add(getRandomBusinessFromCategory("builder"))
-        randBusinessList.add(getRandomBusinessFromCategory("catering"))
-        randBusinessList.add(getRandomBusinessFromCategory("coaching"))
-        randBusinessList.add(getRandomBusinessFromCategory("computers"))
-//        randBusinessList.add(getRandomBusinessFromCategory("guruji"))
-//        randBusinessList.add(getRandomBusinessFromCategory("handicraft"))
-//        randBusinessList.add(getRandomBusinessFromCategory("health"))
-//        randBusinessList.add(getRandomBusinessFromCategory("investment"))
-        randBusinessList.add(getRandomBusinessFromCategory("kirana"))
-//        randBusinessList.add(getRandomBusinessFromCategory("printing"))
-//        randBusinessList.add(getRandomBusinessFromCategory("other"))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.AUTO_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.BEAUTY_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.BOUTIQUE_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.BUILDERS_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.CATERING_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.COACHING_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.COMPUTER_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.GURUJI_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.HANDICRAFT_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.HEALTH_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.INVESTMENT_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.KIRANA_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.PRINTING_SHORT))
+        randBusinessList.add(getRandomBusinessFromCategory(CategoryConstants.OTHER_SHORT))
 
         return randBusinessList
     }
@@ -67,5 +70,31 @@ object FirebaseService {
         }
 
         return Business(businessName = ":|")
+    }
+
+    suspend fun getBusinessesForCategory(
+        category: String,
+        startAfterSnapshot: DocumentSnapshot
+    ): QuerySnapshot {
+
+        val categoryRef =
+            db.collection(category).orderBy("id").startAfter(startAfterSnapshot).limit(5)
+
+        return categoryRef.get().await()
+    }
+
+    suspend fun getBusinessesForCategory(
+        category: String
+    ): QuerySnapshot {
+
+        val categoryRef = db.collection(category).orderBy("id").limit(5)
+
+        return categoryRef.get().await()
+    }
+
+    fun addBusinessForApproval(business: Business) {
+        val approvalsRef = db.collection("approvals").document()
+        business.id = approvalsRef.id
+        approvalsRef.set(business)
     }
 }

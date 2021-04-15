@@ -3,9 +3,8 @@ package com.ninkuk.atmanirbharbharat_tarunmanch.ui.business
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +25,7 @@ class BusinessPageFragment : Fragment() {
     private val args: BusinessPageFragmentArgs by navArgs()
     private lateinit var businessViewModel: BusinessViewModel
     private lateinit var favoriteViewModel: FavoriteViewModel
+    private lateinit var shareString: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,6 +60,8 @@ class BusinessPageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setData(args.businessObject)
+
         favFAB.supportImageTintList =
             ContextCompat.getColorStateList(this.requireContext(), R.color.healthColor)
 
@@ -89,7 +91,39 @@ class BusinessPageFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        setData(args.businessObject)
+        businessOptionsMenu.setOnClickListener {
+            val popupMenu = PopupMenu(requireContext(), businessOptionsMenu)
+            popupMenu.inflate(R.menu.business_options_menu)
+            popupMenu.setOnMenuItemClickListener {
+
+                when (it.itemId) {
+                    R.id.businessReportButton -> sendBugReportEmail()
+                    R.id.businessShareButton -> shareBusiness()
+                }
+
+                true
+            }
+
+            popupMenu.show()
+        }
+    }
+
+    private fun shareBusiness() {
+        val appId = requireContext().packageName
+        val share = Intent(Intent.ACTION_SEND)
+        share.type = "text/plain"
+        val shareText = "Check out this service!\n\n$shareString"
+        share.putExtra(
+            Intent.EXTRA_TEXT,
+            "$shareText\n\nDownload Atmanirbhar Tarun Manch App Today!\nhttps://play.google.com/store/apps/details?id=$appId"
+        )
+        startActivity(Intent.createChooser(share, "Share app using"))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+        inflater.inflate(R.menu.business_options_menu, menu)
     }
 
     private fun setData(business: Business) {
@@ -98,18 +132,103 @@ class BusinessPageFragment : Fragment() {
         titleText.text =
             if (business.businessName.isEmpty()) business.category else business.businessName
 
+        shareString = titleText.text.toString()
+
         // Set owners or remove the view if empty
         if (business.owners.isEmpty()) {
             ownersText.visibility = View.GONE
         } else {
             ownersText.text = business.owners
+            shareString += "\n" + ownersText.text.toString()
         }
 
         // Set required description text
         descriptionText.text = business.description
+        shareString += "\n" + descriptionText.text.toString()
 
         setStyle(business)
         setPhoneNumbers(business)
+        setEmail(business)
+
+        if (business.locationAddress.isNotEmpty()) {
+            addressContainer.visibility = View.VISIBLE
+            addressText.text = business.locationAddress
+            shareString += "\n" + addressText.text
+        }
+    }
+
+    private fun setPhoneNumbers(business: Business) {
+        for (number in business.phoneNumbers) {
+            val btn: MaterialButton =
+                this.layoutInflater.inflate(R.layout.layout_phone_button, null) as MaterialButton
+            btn.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            btn.text = "+91 $number"
+            contactContainer.addView(btn)
+
+            btn.setOnClickListener {
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:${btn.text}")
+                startActivity(intent)
+            }
+
+            shareString += "\n" + btn.text
+        }
+    }
+
+    private fun setEmail(business: Business) {
+        if (business.emailAddress.isNotEmpty()) {
+            val btn: MaterialButton =
+                this.layoutInflater.inflate(R.layout.layout_email_button, null) as MaterialButton
+            btn.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            btn.text = business.emailAddress
+            contactContainer.addView(btn)
+
+            btn.setOnClickListener {
+                val TO_EMAILS = arrayOf(business.emailAddress)
+                val BODY =
+                    "\n\n\nSent via Atmanirbhar Tarun Manch App"
+
+                val intent = Intent(Intent.ACTION_SENDTO)
+                intent.data = Uri.parse("mailto:")
+                intent.putExtra(Intent.EXTRA_EMAIL, TO_EMAILS)
+                intent.putExtra(Intent.EXTRA_TEXT, BODY)
+
+                startActivity(
+                    Intent.createChooser(
+                        intent,
+                        "Please choose an application to send the email"
+                    )
+                )
+            }
+
+            shareString += "\n" + btn.text
+        }
+    }
+
+    private fun sendBugReportEmail() {
+        val TO_EMAILS = arrayOf("ninadk03@gmail.com")
+        val SUBJECT = "Re: Issue with business information"
+        val BODY =
+            "\n\n\nCategory: ${args.businessObject.category}\nBusiness ID: ${args.businessObject.id}"
+
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto:")
+        intent.putExtra(Intent.EXTRA_EMAIL, TO_EMAILS)
+        intent.putExtra(Intent.EXTRA_SUBJECT, SUBJECT)
+        intent.putExtra(Intent.EXTRA_TEXT, BODY)
+
+        startActivity(
+            Intent.createChooser(
+                intent,
+                "Please choose an application to send the email"
+            )
+        )
     }
 
     private fun setStyle(business: Business) {
@@ -265,25 +384,6 @@ class BusinessPageFragment : Fragment() {
                     )
                 )
                 categoryImage.setImageResource(R.drawable.ic_stationary)
-            }
-        }
-    }
-
-    private fun setPhoneNumbers(business: Business) {
-        for (number in business.phoneNumbers) {
-            val btn: MaterialButton =
-                this.layoutInflater.inflate(R.layout.layout_phone_button, null) as MaterialButton
-            btn.layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            btn.text = "+91 $number"
-            contactContainer.addView(btn)
-
-            btn.setOnClickListener {
-                val intent = Intent(Intent.ACTION_DIAL)
-                intent.data = Uri.parse("tel:${btn.text}")
-                startActivity(intent)
             }
         }
     }
