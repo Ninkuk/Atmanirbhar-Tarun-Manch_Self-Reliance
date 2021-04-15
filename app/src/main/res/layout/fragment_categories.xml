@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     android:background="@color/off_white"
     android:scrollbars="none"
     tools:context=".ui.categories.CategoriesFragment">
@@ -11,13 +12,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:orientation="vertical"
-        android:paddingBottom="30dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/categories"
             android:textColor="@color/black"
@@ -26,17 +27,23 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/autoCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/autoColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -51,9 +58,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/beautyCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/beautyColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -66,13 +79,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/boutiqueCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/boutiqueColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -87,9 +105,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/builderCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/builderColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -102,13 +126,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cateringCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/cateringColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -123,9 +152,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/coachingCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/coachingColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -138,13 +173,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/computerCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/computerColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -159,9 +199,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gurujiCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/gurujiColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -174,13 +220,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/handicraftCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/handicraftColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -195,9 +246,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/healthCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/healthColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -210,13 +267,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/investmentCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/investmentColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -231,9 +293,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/kiranaCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/kiranaColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView
@@ -247,13 +315,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginBottom="25dp">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/printingCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#FFCC80">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/printingColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -268,9 +341,15 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/otherCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:rippleColor="#F48FB1">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardBackgroundColor="@color/otherColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
 
 
                     <ImageView

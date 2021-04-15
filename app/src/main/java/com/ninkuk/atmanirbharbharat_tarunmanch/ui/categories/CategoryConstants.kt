@@ -16,5 +16,20 @@ final class CategoryConstants {
         const val KIRANA = "Kirana, Dairy, Namkeen"
         const val PRINTING = "Printing and Stationary"
         const val OTHER = "Other"
+
+        const val AUTO_SHORT = "auto"
+        const val BEAUTY_SHORT = "beauty"
+        const val BOUTIQUE_SHORT = "boutique"
+        const val BUILDERS_SHORT = "builders"
+        const val CATERING_SHORT = "catering"
+        const val COACHING_SHORT = "coaching"
+        const val COMPUTER_SHORT = "computers"
+        const val GURUJI_SHORT = "guruji"
+        const val HANDICRAFT_SHORT = "handicraft"
+        const val HEALTH_SHORT = "health"
+        const val INVESTMENT_SHORT = "invest"
+        const val KIRANA_SHORT = "kirana"
+        const val PRINTING_SHORT = "printing"
+        const val OTHER_SHORT = "other"
     }
 }
