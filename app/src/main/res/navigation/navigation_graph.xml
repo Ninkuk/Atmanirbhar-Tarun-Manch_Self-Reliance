@@ -35,13 +35,15 @@
                 android:name="category"
                 app:argType="string" />
 
+            <argument
+                android:name="category_short"
+                app:argType="string" />
+
         </action>
+        <action
+            android:id="@+id/home_to_search"
+            app:destination="@id/searchFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/businessPageFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.business.BusinessPageFragment"
@@ -72,7 +74,11 @@
         android:id="@+id/aboutFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.about.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/about_to_submission"
+            app:destination="@id/submissionFormFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.categories.CategoriesFragment"
@@ -85,6 +91,10 @@
 
             <argument
                 android:name="category"
+                app:argType="string" />
+
+            <argument
+                android:name="category_short"
                 app:argType="string" />
 
         </action>
@@ -108,5 +118,19 @@
         <argument
             android:name="category"
             app:argType="string" />
+
+        <argument
+            android:name="category_short"
+            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/submissionFormFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.ui.about.SubmissionFormFragment"
+        android:label="fragment_submission_form"
+        tools:layout="@layout/fragment_submission_form" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ninkuk.atmanirbharbharat_tarunmanch.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
