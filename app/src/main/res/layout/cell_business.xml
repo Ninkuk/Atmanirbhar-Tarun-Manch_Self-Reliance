@@ -5,9 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="30dp"
+    android:layout_marginTop="10dp"
     android:layout_marginEnd="30dp"
     android:layout_marginBottom="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,8 +30,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
-                tools:src="@drawable/ic_car"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                tools:src="@drawable/ic_car" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -58,7 +61,8 @@
                 android:lines="2"
                 android:maxLines="2"
                 android:minLines="2"
-                android:text="@string/hindi_dummy" />
+                android:text="@string/hindi_dummy"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
